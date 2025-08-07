@@ -21,11 +21,39 @@
         image[6] = 'all.png';
         var currentdate = new Date();
         var imagenumber = currentdate.getDay();
-        document.write('<img style="display:block; margin-left: auto; margin-right: auto;" src="' + imlocation + image[imagenumber] + '" height="500">');
+        document.write('
+                       <div class="dropdown">
+  <span>Mouse over me</span>
+  <div class="dropdown-content">
+                       <img style="display:block; margin-left: auto; margin-right: auto;" src="' + imlocation + image[imagenumber] + '" height="500">
+             </div>
+</div>
+            ');
         //--></script>
+    <style>
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          padding: 12px 16px;
+          z-index: 1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+</style>
     <title>Bell Schedule</title>
 </head>
 <body>
     
 </body>
 </html>
+
