@@ -3,28 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript"><!--
-        var imlocation = "images/";
-         function ImageArray (n) {
-           this.length = n;
-           for (var i =1; i <= n; i++) {
-             this[i] = ' '
-           }
-         }
-        image = new ImageArray(7);
-        image[0] = 'all.png';
-        image[1] = 'Monday.png';
-        image[2] = 'Tuesday.png';
-        image[3] = 'Wednesday.png';
-        image[4] = 'Thursday.png';
-        image[5] = 'Friday.png';
-        image[6] = 'all.png';
-        var currentdate = new Date();
-        var imagenumber = currentdate.getDay();
-        document.getElementByID("schedule").src = (imlocation+image[imagenumber]);
-               // <img style="display:block; margin-left: auto; margin-right: auto;" src="' + imlocation + image[imagenumber] + '" height="500">
-        //--></script>
     <style>
+        .dropbtn {
+          background-color: orange;
+          color: black;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+        }
+
         .dropdown {
           position: relative;
           display: inline-block;
@@ -48,11 +35,34 @@
 </head>
 <body>
            <div class="dropdown">
-  <span>Mouse over me</span>
+            <button class="dropbtn">Hover and scroll for Bell Schedule</button>
   <div class="dropdown-content">
                        <img style="display:block; margin-left: auto; margin-right: auto;" src="" height="500" id="schedule">
              </div>
 </div>
+
+<script type="text/javascript">
+  var imlocation = 'images/';
+   function ImageArray (n) {
+    this.length = n;
+     for (var i =1; i <= n; i++) {
+       this[i] = ' '
+     }
+   }
+  image = new ImageArray(7);
+  image[0] = 'all.png';
+  image[1] = 'Monday.png';
+  image[2] = 'Tuesday.png';
+  image[3] = 'Wednesday.png';
+  image[4] = 'Thursday.png';
+  image[5] = 'Friday.png';
+  image[6] = 'all.png';
+  var currentdate = new Date();
+  var imagenumber = currentdate.getDay();
+  img = document.getElementById("schedule");
+  img.src = imlocation+image[imagenumber];
+
+  </script>
 </body>
 </html>
 
