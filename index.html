@@ -21,14 +21,8 @@
         image[6] = 'all.png';
         var currentdate = new Date();
         var imagenumber = currentdate.getDay();
-        document.write('
-                       <div class="dropdown">
-  <span>Mouse over me</span>
-  <div class="dropdown-content">
-                       <img style="display:block; margin-left: auto; margin-right: auto;" src="' + imlocation + image[imagenumber] + '" height="500">
-             </div>
-</div>
-            ');
+        document.getElementByID("schedule").src = (imlocation+image[imagenumber]);
+               // <img style="display:block; margin-left: auto; margin-right: auto;" src="' + imlocation + image[imagenumber] + '" height="500">
         //--></script>
     <style>
         .dropdown {
@@ -53,7 +47,13 @@
     <title>Bell Schedule</title>
 </head>
 <body>
-    
+           <div class="dropdown">
+  <span>Mouse over me</span>
+  <div class="dropdown-content">
+                       <img style="display:block; margin-left: auto; margin-right: auto;" src="" height="500" id="schedule">
+             </div>
+</div>
 </body>
 </html>
+
 
