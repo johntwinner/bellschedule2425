@@ -4,12 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        .dropbtn {
+          background-color: orange;
+          color: black;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+        }
 
+        .dropbtn:hover {
+          background-color: darkorange;
+          cursor: pointer;
+        }
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .expectations-content {
+          display: block;
+          position: absolute;
+          background-color: white;
+          max-width: 860px;
+          padding: 12px 16px;
+          z-index: 1;
+        }
+
+        .schedule-content {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 160px;
+          padding: 12px 16px;
+          z-index: 1;
+        }
+        
+        .show {display:block;}
+        .hide {display:none;}
 </style>
     <title>Bell Schedule</title>
 </head>
 <body>
-                       <img style="display:block; margin-left: auto; margin-right: auto;" src="" height="500" id="schedule">
+
+            <button class="dropbtn" onclick="toggleExpectations()">Toggle Expectations/Bell Schedule</button>
+    <div class="expectations-content" id="expectations">
+      <h3>Most Important Rules</h3>
+
+      <ul>
+        <li>Always practice safety</li>
+        <li>Be a good listener</li>
+        <li>Respect the classroom space</li>
+        <li>Respect the equipment</li>
+        <li>No food or drink without permission</li>
+      </ul>
+      
+      <h3>On the Way In</h3>
+      
+      <ul>
+        <li>Collect any papers on your way in</li>
+        <li>Do the warmup if it is posted!</li>
+        <li>Backpack goes under the desk - don&#39;t block the aisle</li>
+      </ul>
+      
+      <h3>During Class</h3>
+      
+      <ul>
+        <li>When I chime the bell and raise my hand, stop what you are doing and listen</li>
+        <li>Ask others for help before me</li>
+        <li>Stay on task and use your time wisely - do not disrupt others</li>
+        <li>Your phone is <a href="https://docs.google.com/document/d/19ZmcudgobsBIhMqWdptDBV8-X3QIR2bFoydJ0M3FZo0/edit#heading=h.k3gitkaa923g">away for the day</a></li>
+        <li>Music and wired headphones are only allowed when doing independent work and only if you are on-task. Put them away when I am talking</li>
+        <li>No Chromebook games allowed. The only exception is chess, and only if you are done with all of your work. A better idea is to ask for an extra credit assignment</li>
+      </ul>
+      
+      <h3>Using the Bathroom or Taking Breaks</h3>
+      
+      <ul>
+        <li>One person is allowed in the bathroom at a time</li>
+        <li>Give me your cell phone before you go to the bathroom</li>
+        <li>Ask me if you need to take an unscheduled break</li>
+      </ul>
+      
+      <h3>Respecting the Space</h3>
+      
+      <ul>
+        <li>Stay away from my desk and cabinets</li>
+        <li>Stay out of the storage room/calming corner unless given permission</li>
+        <li>No more than one person is allowed in the calming corner at a time, no exceptions</li>
+      </ul>
+      
+      <h3>End of Class</h3>
+      
+      <ul>
+        <li>I will not dismiss you until the class is clean and you are seated and quiet</li>
+        <li>When dismissed, push your chair in</li>
+      </ul>
+    </div>
+  <div class="schedule-content" id="schedule">
+                       <img style="display:block; margin-left: auto; margin-right: auto;" src="" height="500" id="scheduleImage">
+             </div>
+
 
 <script type="text/javascript">
   var imlocation = 'images/';
@@ -29,12 +124,16 @@
   image[6] = 'all.png';
   var currentdate = new Date();
   var imagenumber = currentdate.getDay();
-  img = document.getElementById("schedule");
+  img = document.getElementById("scheduleImage");
   img.src = imlocation+image[imagenumber];
+
+  function toggleExpectations() {
+    document.getElementById("expectations").classList.toggle("hide");
+    document.getElementById("schedule").classList.toggle("show");
+  }
 
   </script>
 </body>
 </html>
-
 
 
